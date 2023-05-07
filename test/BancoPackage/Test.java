@@ -165,11 +165,10 @@ public class Test {
 		Banco nuevoBanco=new Banco(nombreBanco);
 		Cliente nuevoCliente=new Cliente(nombreCliente,apellidoCliente,dniCliente);
 		CuentaCorriente nuevaCuentaCorriente=new CuentaCorriente(nuevoCliente);
-		nuevoBanco.agregarCuentaDeAhorroAlBanco(nuevaCuentaCorriente);
+		nuevoBanco.agregarCuentaCorrienteAlBanco(nuevaCuentaCorriente);
 			
 		//Verificacion
-		assertEquals(0,nuevoBanco.getCuentasSueldo().size());
-		assertEquals(1,nuevoBanco.getCuentasCuentaCorrientes().size());	
+		assertEquals(1,nuevoBanco.getListaDeCuentaCorriente().size());	
 	}
 	
 }

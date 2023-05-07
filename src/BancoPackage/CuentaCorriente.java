@@ -1,5 +1,9 @@
 package BancoPackage;
 
-public class CuentaCorriente {
-
+public class CuentaCorriente extends Cuenta{
+	
+	public CuentaCorriente(Cliente nuevoCliente) {
+		super(nuevoCliente);
+	}
+	
 }

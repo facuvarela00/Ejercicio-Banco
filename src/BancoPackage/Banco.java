@@ -6,11 +6,13 @@ public class Banco {
 private String nombreBanco="";
 private HashSet <Cuenta> cuentasSueldo;
 private HashSet <CajaDeAhorro> cuentasDeCajaDeAhorro;
+private HashSet <CuentaCorriente> listaDeCuentaCorriente;
 
 public Banco(String nombreBanco) {
 	this.nombreBanco=nombreBanco;
 	this.cuentasSueldo=new HashSet <Cuenta>();
 	this.cuentasDeCajaDeAhorro=new HashSet <CajaDeAhorro>();
+	this.listaDeCuentaCorriente=new HashSet <CuentaCorriente>();
 }
 
 public void agregarCuentaAlBanco(Cuenta nuevaCuenta) {
@@ -46,5 +48,19 @@ public HashSet<CajaDeAhorro> getCuentasDeCajaDeAhorro() {
 public void setCuentasDeCajaDeAhorro(HashSet<CajaDeAhorro> cuentasDeCajaDeAhorro) {
 	this.cuentasDeCajaDeAhorro = cuentasDeCajaDeAhorro;
 }
+
+public void agregarCuentaCorrienteAlBanco(CuentaCorriente nuevaCuentaCorriente) {
+	this.listaDeCuentaCorriente.add(nuevaCuentaCorriente);
+	
+}
+
+public HashSet<CuentaCorriente> getListaDeCuentaCorriente() {
+	return listaDeCuentaCorriente;
+}
+
+public void setListaDeCuentaCorriente(HashSet<CuentaCorriente> listaDeCuentaCorriente) {
+	this.listaDeCuentaCorriente = listaDeCuentaCorriente;
+}
+
 
 }
