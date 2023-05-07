@@ -10,14 +10,15 @@ public class Test {
 		String nombreBanco="xD";
 		Banco nuevoBanco=new Banco(nombreBanco);
 	}
+	
 	@org.junit.Test
 	public void queSeCreeUnCliente() {
 		String nombreCliente="Pedro", apellidoCliente="Pascal";
 		Integer dniCliente=42952902;
 		
 		Cliente nuevoCliente=new Cliente(nombreCliente,apellidoCliente,dniCliente);
-		
 	}
+	
 	@org.junit.Test
 	public void queSeAgregueCuentaABanco() {
 		//Inicializacion
@@ -234,6 +235,39 @@ public class Test {
 		
 		ve= 105.0;
 		assertEquals(ve,nuevaCuentaCorriente.getDeuda());	
+	}
+	
+	@org.junit.Test
+	public void ordenarCliente() {
+		//Inicializacion
+		String nombreBanco="xD";
+		String nombreCliente="Pedro", apellidoCliente="Pascal";
+		Integer dniCliente=42952902;
+		
+		String nombreCliente1="Pedra", apellidoCliente1="Pascala";
+		Integer dniCliente1=42952903;
+				
+		String nombreCliente2="Pedre", apellidoCliente2="Pascale";
+		Integer dniCliente2=42952901;
+				
+		//Instanciación
+		Banco nuevoBanco=new Banco(nombreBanco);
+		Cliente nuevoCliente=new Cliente(nombreCliente,apellidoCliente,dniCliente);
+		CuentaCorriente nuevaCuentaCorriente=new CuentaCorriente(nuevoCliente);
+		nuevoBanco.agregarCuentaCorrienteAlBanco(nuevaCuentaCorriente);
+		
+		Cliente nuevoCliente1=new Cliente(nombreCliente1,apellidoCliente1,dniCliente1);
+		CuentaCorriente nuevaCuentaCorriente1=new CuentaCorriente(nuevoCliente1);
+		nuevoBanco.agregarCuentaCorrienteAlBanco(nuevaCuentaCorriente1);
+		
+		Cliente nuevoCliente2=new Cliente(nombreCliente2,apellidoCliente2,dniCliente2);
+		CuentaCorriente nuevaCuentaCorriente2=new CuentaCorriente(nuevoCliente2);
+		nuevoBanco.agregarCuentaCorrienteAlBanco(nuevaCuentaCorriente2);
+		
+		//Verificacion Que se cree descubierto
+		assertEquals(3,nuevoBanco.getListaDeCuentaCorriente().size());
+		
+		
 	}
 	
 	
